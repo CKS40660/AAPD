@@ -1,14 +1,19 @@
 $utilities: map-merge(
     $utilities,
     (
-        "font-size": map-merge(
-                map-get($utilities, "font-size"),
-                (
-                    responsive: true
-                )
-            )
+        "font-size": (
+            responsive: true
+        )
     )
 );
 
-
 @import "bootstrap/scss/utilities/api";
+
+// 生成 .fs-1 ~ .fs-9
+@each $level, $size in $font-sizes {
+    $lh-key: map-get($fs-to-lh, $level);
+    .fs-#{$level} {
+        font-size: $size;
+        line-height: map-get($line-heights, $lh-key);
+    }
+}

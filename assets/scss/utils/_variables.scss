@@ -494,7 +494,8 @@ $enable-grid-classes:         true !default;
 $enable-container-classes:    true !default;
 $enable-cssgrid:              false !default;
 $enable-button-pointers:      true !default;
-$enable-rfs:                  true !default;
+$enable-rfs:                  false !default;
+// $enable-rfs:                  true !default;
 $enable-validation-icons:     true !default;
 $enable-negative-margins:     false !default;
 $enable-deprecation-messages: true !default;
@@ -564,7 +565,7 @@ $position-values: (
 $body-text-align:           null !default;
 $body-color:                $neutral-100 !default;
 // $body-color:                $gray-900 !default;
-$body-bg:                   $primary-900 !default;
+$body-bg:                   $neutral-1100 !default;
 // $body-bg:                   $white !default;
 
 $body-secondary-color:      rgba($body-color, .75) !default;
@@ -766,29 +767,79 @@ $line-height-sm:              1.25 !default;
 $line-height-lg:              1.75 !default;
 // $line-height-lg:              2 !default;
 
+// 固定行高
+$line-height-64: 64px;
+$line-height-48: 48px;
+$line-height-40: 40px;
+$line-height-32: 32px;
+$line-height-28: 28px;
+$line-height-24: 24px;
+$line-height-20: 20px;
+$line-height-16: 16px;
 
-$h1-font-size:                $font-size-base * 3 !default;
+$line-heights: (
+  64: $line-height-64,
+  48: $line-height-48,
+  40: $line-height-40,
+  32: $line-height-32,
+  28: $line-height-28,
+  24: $line-height-24,
+  20: $line-height-20,
+  16: $line-height-16
+);
+
+// 字型跟行高對照  等級 → 行高「key」（用數字 64/48… 對應上面 map）
+$fs-to-lh: (
+  1: 64,
+  2: 48,
+  3: 40,
+  4: 32,
+  5: 28,
+  6: 28,
+  7: 24,
+  8: 20,
+  9: 16
+);
+
+// 標題
+$h1-font-size: $font-size-base * 3 !default; // 48px 標題一
 // $h1-font-size:                $font-size-base * 2.5 !default;
-$h2-font-size:                $font-size-base * 2.25 !default;
+$h2-font-size: $font-size-base * 2.25 !default; // 36px 標題二
 // $h2-font-size:                $font-size-base * 2 !default;
-$h3-font-size:                $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 2 !default; // 32px 標題三
 // $h3-font-size:                $font-size-base * 1.75 !default;
-$h4-font-size:                $font-size-base * 1.5 !default;
-$h5-font-size:                $font-size-base * 1.25 !default;
-$h6-font-size:                $font-size-base !default;
-// 新增14px
-$text-fz-14:                  $font-size-base * 0.875;
+$h4-font-size: $font-size-base * 1.5 !default; // 24px 標題四
+$h5-font-size: $font-size-base * 1.25 !default; // 20px 標題五
+$h6-font-size: $font-size-base !default;
+
+// 內文
+$text-fz-18: $font-size-base * 1.125; // 18px
+$text-fz-16: $font-size-base; // 16px
+$text-fz-14: $font-size-base * 0.875; // 14px
+// 說明文字
+$text-fz-12: $font-size-base * 0.75; // 12px
 // scss-docs-end font-variables
 
 // scss-docs-start font-sizes
 $font-sizes: (
+// 48px 標題一
   1: $h1-font-size,
+  // 36px 標題二
   2: $h2-font-size,
+  // 32px 標題三
   3: $h3-font-size,
+  // 24px 標題四
   4: $h4-font-size,
+  // 20px 標題五
   5: $h5-font-size,
-  6: $h6-font-size,
-  7: $text-fz-14,
+  // 18px 內文1
+  6: $text-fz-18,
+  // 16px 內文2
+  7: $text-fz-16,
+  // 14px 內文3
+  8: $text-fz-14,
+  // 12px 說明文字
+  9: $text-fz-12
 ) !default;
 // scss-docs-end font-sizes
 
